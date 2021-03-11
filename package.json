@@ -1,4 +1,38 @@
 {
   "name": "md-links",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "description": "libreria de nodejs",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "eslint": "eslint --ext .js test/",
+    "pretest": "npm run eslint",
+    "nodemon": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thainole/LIM014-mdlinks.git"
+  },
+  "keywords": [
+    "javascript",
+    "md",
+    "nodejs"
+  ],
+  "author": "Thais Illescas <thainole@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thainole/LIM014-mdlinks/issues"
+  },
+  "dependencies": {
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
 }
