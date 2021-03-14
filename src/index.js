@@ -4,15 +4,15 @@ const api = require('./api');
 const mdLinks = (example) => {
     const absolutePath = api.resolvePath(example);
     const pathIsValid = api.validPath(absolutePath);
-    if (pathIsValid == true) {
-        return api.readDir(absolutePath);
-    } else {
-        return 'The path is not valid';
-    };
 
+    if (pathIsValid == true) {
+        api.getMdFiles(absolutePath);
+    }
+
+    //falta acomodar para que funcione
 }
 
-/*console.log(mdLinks('/Carpeta'));
-console.log(mdLinks('/Carpeta/Carpeta-1'));*/
+console.log(mdLinks('/Carpeta'));
+console.log(mdLinks('/Carpeta/Carpeta-1'));
 
 module.exports = mdLinks;

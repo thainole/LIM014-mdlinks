@@ -1,27 +1,51 @@
 const path = require('path');
 const fs = require('fs');
+const Console = require('console');
 
 // Para volver un path absoluto
 const resolvePath = (somePath) => (path.isAbsolute(somePath) ? somePath : path.resolve(somePath));
-/*console.log(resolvePath('./Carpeta'));*/
 
-// Para saber si la ruta existe/ es correcta)
-const validPath = (absolutePath) => fs.existsSync(absolutePath);
-/*console.log(validPath('D:/Carpeta'));*/
+// Para saber si la ruta existe / es correcta)
+const validPath = (paths) => fs.existsSync(paths);
 
-// Para saber si es una carpeta
-const isDirectory = (absolutePath) => fs.statSync(absolutePath).isDirectory();
-console.log(isDirectory('D:/Carpeta'));
+//Para obtener los MD files
+const elemArr = [];
+const getMdFiles = (paths) => {
+    const extName = path.extname(paths);
+    const pathName = path.basename(paths)
+    const infoPath = fs.statSync(paths);
 
-// Para leer un directorio (retorna en un array los elementos encontrados)
-const readDir = (absolutePath) => fs.readdirSync(absolutePath);
-/*console.log(readDir('D:/Carpeta'));*/
-
-const isFile = (absolutePath) => fs.statSync(absolutePath).isFile();
-console.log(isFile('D:/Carpeta/primer-archivo.md'));
+    if (infoPath.isDirectory() && pathName !== 'node_modules') {
+        const dirElem = fs.readdirSync(paths);  
+        if (dirElem.length > 0) {
+            dirElem.map((elem) => {
+                const newAbsPath = `${paths}/${elem}`;
+                return getMdFiles(newAbsPath);
+            }) 
+        } else {
+            return 'This directory does not contain any file'
+        }
+    } else if (extName == '.md') {
+        elemArr.push(paths);
+    } 
+    return elemArr;
+}    
+    
+console.log(getMdFiles('D:/Documentos/Laboratoria/Bootcamp'));
+//Duda, no puedo hacerlo con la diagonal invertida :c no sé porqué
 
 module.exports = {
     resolvePath,
     validPath,
-    readDir,
+    getMdFiles
 }
+
+
+// Los console log
+/* 
+console.log(resolvePath('./Carpeta'));
+console.log(validPath('D:/Carpeta'));
+console.log(isDirectory('D:/Carpeta'));
+console.log(readDir('D:/Carpeta'));
+console.log(isFile('D:/Carpeta/primer-archivo.md'));
+*/
