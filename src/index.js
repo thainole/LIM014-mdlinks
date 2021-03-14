@@ -8,10 +8,11 @@ const mdLinks = (example) => {
         return api.readDir(absolutePath);
     } else {
         return 'The path is not valid';
-    }
+    };
+
 }
 
-console.log(mdLinks('/Carpeta'));
-console.log(mdLinks('/Carpeta/Carpeta-1'));
+/*console.log(mdLinks('/Carpeta'));
+console.log(mdLinks('/Carpeta/Carpeta-1'));*/
 
 module.exports = mdLinks;
