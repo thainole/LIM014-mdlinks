@@ -8,7 +8,6 @@ const mdLinks = (example) => {
     if (pathIsValid == true) {
        return api.getMdFiles(absolutePath);
     }
-
 }
 
 console.log(mdLinks('/Carpeta')); 

@@ -21,9 +21,7 @@ const getMdFiles = (paths) => {
                 const newAbsPath = path.join(paths, elem);          // y unir el path + los elementos 
                 return getMdFiles(newAbsPath);                      // para luego aplicarles la misma función 
             }) 
-        } else {
-            return 'This directory does not contain any file'       // en caso no haya archivos
-        }
+        };
     } else if (extName == '.md') {                                  // si la extensión es md
         elemArr.push(paths);                                        // agregar ese path al array creado anteriormente 
     } 
@@ -37,12 +35,3 @@ module.exports = {
     getMdFiles
 }
 
-
-// Los console log
-/* 
-console.log(resolvePath('./Carpeta'));
-console.log(validPath('D:/Carpeta'));
-console.log(isDirectory('D:/Carpeta'));
-console.log(readDir('D:/Carpeta'));
-console.log(isFile('D:/Carpeta/primer-archivo.md'));
-*/
