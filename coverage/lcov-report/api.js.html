@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>22/22</span>
+                <span class='fraction'>21/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>20/20</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
@@ -90,84 +90,72 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">609x</span>
+<span class="cline-any cline-yes">609x</span>
+<span class="cline-any cline-yes">609x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">609x</span>
+<span class="cline-any cline-yes">231x</span>
+<span class="cline-any cline-yes">231x</span>
+<span class="cline-any cline-yes">225x</span>
+<span class="cline-any cline-yes">606x</span>
+<span class="cline-any cline-yes">606x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">378x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">609x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const path = require('path');
 const fs = require('fs');
-const console = require('console');
-&nbsp;
 &nbsp;
 /* Para volver un path absoluto y validar la ruta */
-const resolvePath = (somePath) =&gt; (path.isAbsolute(somePath) ? somePath : <span class="branch-1 cbranch-no" title="branch not covered" >path.resolve(somePath))</span>;
+const resolvePath = (somePath) =&gt; (path.isAbsolute(somePath) ? somePath : path.resolve(somePath));
 const validPath = (paths) =&gt; fs.existsSync(paths);
 &nbsp;
 /* Para obtener los MD files */
-const elemArr = [];                                                 // Crear un array vacío para luego insertar los archivos md
+const elemArr = []; // Crear un array vacío para luego insertar los archivos md
 const getMdFiles = (paths) =&gt; {
-    const extName = path.extname(paths);                            // método para obtener la extensión (md)
-    const pathName = path.basename(paths)                           // retorna la última porción del path (para obtener el nombre)
-    const infoPath = fs.statSync(paths);                            // para acceder a la información de los archivos
+  const extName = path.extname(paths); // método para obtener la extensión (md)
+  const pathName = path.basename(paths); // retorna la última porción del path (obtener el nombre)
+  const infoPath = fs.statSync(paths); // para acceder a la información de los archivos
 &nbsp;
-    if (infoPath.isDirectory() &amp;&amp; pathName !== 'node_modules') {    // método que da true &amp;&amp; el basename diferente a la carpeta node_modules
-        const dirElem = fs.readdirSync(paths);                      //Para leer el directorio, muestra sus elementos en un array
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (dirElem.length &gt; 0) {                                   // Si hay más de un elemento...
-            dirElem.map((elem) =&gt; {                                 // recorrer todos los elementos del array
-                const newAbsPath = path.join(paths, elem);          // y unir el path + los elementos 
-                return getMdFiles(newAbsPath);                      // para luego aplicarles la misma función 
-            }) 
-        };
-    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (extName == '.md') {                                  // si la extensión es md
-        elemArr.push(paths);                                        // agregar ese path al array creado anteriormente 
-    } 
-    return elemArr;                                                 // retornar el array de los elementos con extensión md
-}    
-    //console.log(getMdFiles('D:/Carpeta'))
+  if (infoPath.isDirectory() &amp;&amp; pathName !== 'node_modules') { // método que da true &amp;&amp; el basename diferente a la carpeta node_modules
+    const dirElem = fs.readdirSync(paths); // Para leer directorio, muestra elementos en un array
+    if (dirElem.length &gt; 0) { // Si hay más de un elemento...
+      dirElem.map((elem) =&gt; { // recorrer todos los elementos del array
+        const newAbsPath = path.join(paths, elem); // y unir el path + los elementos
+        return getMdFiles(newAbsPath); // para luego aplicarles la misma función
+      });
+    }
+  } else if (extName === '.md') { // si la extensión es md
+    elemArr.push(paths); // agregar ese path al array creado anteriormente
+  }
+  return elemArr; // retornar el array de los elementos con extensión md
+};
 &nbsp;
 module.exports = {
-    resolvePath,
-    validPath,
-    getMdFiles
-}
-&nbsp;
+  resolvePath,
+  validPath,
+  getMdFiles,
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -175,7 +163,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Mar 14 2021 16:53:14 GMT-0500 (hora estándar de Perú)
+                at Mon Mar 15 2021 10:08:14 GMT-0500 (hora estándar de Perú)
             </div>
         </div>
         <script src="prettify.js"></script>
