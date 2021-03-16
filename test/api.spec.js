@@ -27,13 +27,13 @@ describe('Valid Path', () => {
   });
 });
 
-describe('hola', () => {
+describe('Get md files', () => {
   it('is a function', () => {
     expect(typeof getMdFiles).toBe('function');
   });
 
-  it('qué hace', () => {
-    const result = ['a'];
-    expect(getMdFiles('path')).toStrictEqual(result);
+  it('verifies if the path is a directory, analize the content and returns only the mdfiles in an array', () => {
+    const result = ['D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md'];
+    expect(getMdFiles('D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks')).toStrictEqual(result);
   });
 });
