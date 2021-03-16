@@ -1,24 +1,29 @@
 const { resolvePath, validPath, getMdFiles } = require('../src/api.js');
 
-describe('hola', () => {
+describe('Resolve Path', () => {
   it('is a function', () => {
     expect(typeof resolvePath).toBe('function');
   });
 
-  it('qué hace', () => {
-    const result = ['a'];
-    expect(resolvePath('path')).toStrictEqual(result);
+  it('verifies if a path is absolute', () => {
+    const result = 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks';
+    expect(resolvePath('D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks')).toStrictEqual(result);
+  });
+
+  it('turns a relative path into an absolute one', () => {
+    const result = 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks';
+    expect(resolvePath('../LIM014-mdlinks')).toStrictEqual(result);
   });
 });
 
-describe('hola', () => {
+describe('Valid Path', () => {
   it('is a function', () => {
     expect(typeof validPath).toBe('function');
   });
 
-  it('qué hace', () => {
-    const result = ['a'];
-    expect(validPath('path')).toStrictEqual(result);
+  it('verifies if a path is valid', () => {
+    const result = true;
+    expect(validPath('D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks')).toStrictEqual(result);
   });
 });
 

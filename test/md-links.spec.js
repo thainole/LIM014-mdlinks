@@ -1,5 +1,5 @@
 /* eslint-disable quotes */
-/* const mdLinks = require('../src/index.js');
+const mdLinks = require('../src/index.js');
 
 describe('mdLinks', () => {
   it('is a function', () => {
@@ -16,4 +16,3 @@ describe('mdLinks', () => {
     expect(mdLinks('../LIM014-mdlinks')).toStrictEqual(result);
   });
 });
- */
