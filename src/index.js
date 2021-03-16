@@ -10,6 +10,6 @@ const mdLinks = (example) => {
   }
 };
 
-console.log(mdLinks('../LIM014-mdlinks'));
+// console.log(mdLinks('../LIM014-mdlinks'));
 
 module.exports = mdLinks;
