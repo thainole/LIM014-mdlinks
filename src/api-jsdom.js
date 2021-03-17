@@ -1,5 +1,10 @@
 const path = require('path');
 const fs = require('fs');
+const jsdom = require('jsdom');
+const marked = require('marked');
+// const html = marked('# Marked in Node.js\n\nRendered by **marked**.')
+
+const { JSDOM } = jsdom;
 
 /* Para volver un path absoluto y validar la ruta */
 const resolvePath = (somePath) => (path.isAbsolute(somePath) ? somePath : path.resolve(somePath));
@@ -26,41 +31,39 @@ const getMdFiles = (paths) => {
   return elemArr;
 };
 
-// eslint-disable-next-line no-useless-escape
-const regx = /\[([\w\s\d.()]+)\]\(((?:\/|https?:\/\/)[\w\d./?=#&_%~,.:-]+)\)/mg;
-const regxLink = /\(((?:\/|https?:\/\/)[\w\d./?=#&_%~,.:-]+)\)/mg;
-const regxText = /\[([\w\s\d.()]+)\]/g;
-
 /* Funciones para leer archivos y extraer links */
 const readFile = (file) => (fs.readFileSync(file, 'utf-8'));
-const matchLinks = (file) => (file.match(regx));
 
-const getLinks = (pth) => {
+/* Necesito convertir mi archivo a html, luego hacer un dom de eso y
+Finalmente extraer los links */
+
+const getLinks = (paths) => {
   const linksArr = [];
-  const getMdFilesArr = getMdFiles(pth);
-  getMdFilesArr.map((elem) => {
-    const fileRead = readFile(elem);
-    const links = matchLinks(fileRead);
-    if (links) {
-      links.map((link) => {
-        const hrf = link.match(regxLink).join().slice(1, -1); // con join vuelvo un string mi array
-        const txt = link.match(regxText).join().slice(1, -1); // con el slice corto () []
-        const arrLinksObj = {
-          href: hrf,
-          text: txt,
-          file: elem,
+  const mdfiles = getMdFiles(paths);
+  if (mdfiles.length > 0) {
+    mdfiles.map((files) => {
+      const filesRead = readFile(files);
+      const html = marked(filesRead);
+      const dom = new JSDOM(html);
+      const tag = dom.window.document.querySelectorAll('a');
+      tag.forEach((elem) => {
+        const arrObj = {
+          href: elem.getAttribute('href'),
+          text: elem.innerHTML, // se puede usar tb textContent
+          file: files,
         };
-        linksArr.push(arrLinksObj);
+        return linksArr.push(arrObj);
       });
-    }
-  });
+    });
+  }
   return linksArr;
 };
+
 console.log(getLinks('D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md'));
 
+// console.log(getLinks('D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md'));
 module.exports = {
   resolvePath,
   validPath,
   getMdFiles,
-  getLinks,
 };

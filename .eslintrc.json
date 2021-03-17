@@ -4,6 +4,7 @@
         "es2021": true,
         "node": true,
         "jest": true
+
     },
     "extends": [
         "airbnb-base"
@@ -12,6 +13,7 @@
         "ecmaVersion": 12
     },
     "rules": {
-        "linebreak-style": 0
+        "linebreak-style": 0,
+        "no-console": "off"
     }
 }
