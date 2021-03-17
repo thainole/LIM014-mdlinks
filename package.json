@@ -10,7 +10,7 @@
     "test": "jest --verbose --coverage",
     "eslint": "eslint --ext .js test/",
     "pretest": "npm run eslint",
-    "nodemon": "nodemon ./src/api-jsdom.js"
+    "nodemon": "nodemon ./src/api.js"
   },
   "repository": {
     "type": "git",
