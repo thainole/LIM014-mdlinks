@@ -35,20 +35,20 @@ const regxText = /\[([\w\s\d.()]+)\]/g;
 const readFile = (file) => (fs.readFileSync(file, 'utf-8'));
 const matchLinks = (file) => (file.match(regx));
 
-const getLinks = (pth) => {
+const getLinks = (mypath) => {
   const linksArr = [];
-  const getMdFilesArr = getMdFiles(pth);
-  getMdFilesArr.map((elem) => {
-    const fileRead = readFile(elem);
+  const getMdFilesArr = getMdFiles(mypath);
+  getMdFilesArr.map((myfile) => {
+    const fileRead = readFile(myfile);
     const links = matchLinks(fileRead);
     if (links) {
       links.map((link) => {
-        const hrf = link.match(regxLink).join().slice(1, -1); // con join vuelvo un string mi array
-        const txt = link.match(regxText).join().slice(1, -1); // con el slice corto () []
+        const myhref = link.match(regxLink).join().slice(1, -1); // con join vuelvo string mi array
+        const mytext = link.match(regxText).join().slice(1, -1); // con el slice corto () []
         const arrLinksObj = {
-          href: hrf,
-          text: txt,
-          file: elem,
+          href: myhref,
+          text: mytext,
+          file: myfile,
         };
         linksArr.push(arrLinksObj);
       });
