@@ -1,9 +1,11 @@
 const path = require('path');
 const fs = require('fs');
+const fetch = require('node-fetch');
 
 /* Función para volver un path absoluto y validar la ruta */
 const absolutePath = (paths) => (path.isAbsolute(paths) ? paths : path.resolve(paths));
 const validPath = (paths) => fs.existsSync(paths);
+
 /* Función para obtener los MD files */
 const elemArr = [];
 const getMdFiles = (paths) => {
@@ -51,11 +53,7 @@ const getMdLinks = (paths) => {
   return linksArr;
 };
 
-// console.log(getMdFiles('D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks'));
-// console.log(getMdLinks('D:\\Carpeta\\primer-archivo.md'));
 console.log(getMdLinks(['D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md']));
-// console.log(getLinks('../LIM014-mdlinks'));
-// Funciona solo con rutas completas, si le paso esto en index no funciona.
 
 module.exports = {
   absolutePath,
