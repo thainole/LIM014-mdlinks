@@ -53,7 +53,14 @@ const getMdLinks = (paths) => {
   return linksArr;
 };
 
-console.log(getMdLinks(['D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md']));
+const validLink = (link) => {
+  console.log(link);
+  fetch(link).then((res) => {
+    console.log(res);
+  });
+};
+
+console.log(validLink('https://es.wikipedia.org/wiki/Markdown'));
 
 module.exports = {
   absolutePath,
