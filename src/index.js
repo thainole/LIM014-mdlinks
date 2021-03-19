@@ -9,11 +9,17 @@ const mdLinks = (example) => {
   } else {
     const getFiles = api.getMdFiles(absPath);
     const getLinks = api.getMdLinks(getFiles);
-    return getLinks;
+    const arrHref = [];
+    getLinks.forEach((arr) => {
+      const links = arr.href;
+      arrHref.push(links);
+      return arrHref;
+    });
+    arrHref.forEach((link) => api.validLink(link));
   }
 };
 
 // console.log(mdLinks('D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md'));
-// console.log(mdLinks('../LIM014-mdlinks'));
+console.log(mdLinks('../LIM014-mdlinks'));
 
 module.exports = mdLinks;
