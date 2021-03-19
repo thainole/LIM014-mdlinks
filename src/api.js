@@ -68,8 +68,6 @@ const validLink = (link) => {
   });
 };
 
-// console.log(validLink('https://nodejs.org/'));
-
 module.exports = {
   absolutePath,
   validPath,
