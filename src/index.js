@@ -4,20 +4,17 @@ const api = require('./api');
 const mdLinks = (example) => {
   const absPath = api.absolutePath(example);
   const pathIsValid = api.validPath(absPath);
-  /* eslint no-new: "error" */
   const promise = new Promise((resolve, reject) => {
     if (pathIsValid === false) {
       reject();
     } else {
       const getFiles = api.getMdFiles(absPath);
       const getLinks = api.getMdLinks(getFiles);
-      const arrHref = [];
-      getLinks.forEach((arr) => {
+      getLinks.map((arr) => {
         const links = arr.href;
-        arrHref.push(links);
-        return arrHref;
+        const validating = api.validLink(links);
+        return validating;
       });
-      arrHref.forEach((link) => api.validLink(link));
       resolve();
     }
     return promise;

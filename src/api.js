@@ -60,7 +60,7 @@ const validLink = (link) => {
     const mymessage = res['statusText'];
     const newObj = `
     {
-      href: ${myurl},
+      url: ${myurl},
       status: ${mystatus},
       message: ${mymessage},
     }`;
