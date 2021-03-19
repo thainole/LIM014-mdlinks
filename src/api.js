@@ -54,13 +54,21 @@ const getMdLinks = (paths) => {
 };
 
 const validLink = (link) => {
-  console.log(link);
   fetch(link).then((res) => {
-    console.log(res);
+    const myurl = res['url'];
+    const mystatus = res['status'];
+    const mymessage = res['statusText'];
+    const newObj = `
+    {
+      href: ${myurl},
+      status: ${mystatus},
+      message: ${mymessage},
+    }`;
+    return(console.log(newObj));
   });
 };
 
-console.log(validLink('https://es.wikipedia.org/wiki/Markdown'));
+console.log(validLink('https://es.wikipedia.org/wiki/Markown'));
 
 module.exports = {
   absolutePath,
