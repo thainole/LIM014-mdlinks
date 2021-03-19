@@ -64,15 +64,16 @@ const validLink = (link) => {
       status: ${mystatus},
       message: ${mymessage},
     }`;
-    return(console.log(newObj));
+    return console.log(newObj);
   });
 };
 
-console.log(validLink('https://es.wikipedia.org/wiki/Markown'));
+console.log(validLink('https://nodejs.org/'));
 
 module.exports = {
   absolutePath,
   validPath,
   getMdFiles,
   getMdLinks,
+  validLink,
 };
