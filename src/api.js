@@ -53,20 +53,16 @@ const getMdLinks = (paths) => {
   return linksArr;
 };
 
-const validLink = (link) => {
-  fetch(link).then((res) => {
-    const myurl = res['url'];
-    const mystatus = res['status'];
-    const mymessage = res['statusText'];
-    const newObj = `
-    {
-      url: ${myurl},
-      status: ${mystatus},
-      message: ${mymessage},
-    }`;
-    return console.log(newObj);
-  });
-};
+const validLink = (arr) => fetch(arr.href).then((res) => {
+  const mystatus = res.status;
+  const mymessage = res.statusText;
+  const newObj = {
+    ...arr,
+    status: mystatus,
+    message: mymessage,
+  };
+  return newObj;
+});
 
 module.exports = {
   absolutePath,

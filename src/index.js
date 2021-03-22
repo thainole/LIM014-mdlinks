@@ -1,8 +1,8 @@
 const api = require('./api');
 
 // Debería ser (path,options)
-const mdLinks = (example) => {
-  const absPath = api.absolutePath(example);
+const mdLinks = (path, option) => {
+  const absPath = api.absolutePath(path);
   const pathIsValid = api.validPath(absPath);
   const promise = new Promise((resolve, reject) => {
     if (pathIsValid === false) {
@@ -10,17 +10,24 @@ const mdLinks = (example) => {
     } else {
       const getFiles = api.getMdFiles(absPath);
       const getLinks = api.getMdLinks(getFiles);
-      getLinks.map((arr) => {
-        const links = arr.href;
-        const validating = api.validLink(links);
-        return validating;
-      });
-      resolve();
+      if (option && option.validate === true) {
+        const validatingLinks = getLinks.map((arr) => {
+          const validating = api.validLink(arr);
+          return validating;
+        });
+        Promise.all(validatingLinks).then((values) => {
+          console.log(values);
+        });
+      } else {
+        resolve(getLinks);
+      }
     }
-    return promise;
   });
+  return promise;
 };
 
-console.log(mdLinks('../LIM014-mdlinks'));
+mdLinks('../LIM014-mdlinks', { validate: true })
+  .then((result) => console.log(result))
+  .catch(console.error);
 
 module.exports = mdLinks;
