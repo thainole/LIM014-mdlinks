@@ -3,6 +3,7 @@ const {
   validPath,
   getMdFiles,
   getMdLinks,
+  validLink,
 } = require('../src/api.js');
 
 describe('Resolve Path', () => {
@@ -66,5 +67,26 @@ describe('Get md links', () => {
   it('Throws an empty array', () => {
     const result = [];
     expect(getMdLinks(['D:\\Carpeta\\primer-archivo.md'])).toStrictEqual(result);
+  });
+});
+
+describe('Validate link', () => {
+  test('Promise', (done) => {
+    const arr = {
+      href: 'https://es.wikipedia.org/wiki/Markdown',
+      text: 'Markdown',
+      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md',
+    };
+    validLink(arr).then((elem) => {
+      const obj = {
+        href: 'https://es.wikipedia.org/wiki/Markdown',
+        text: 'Markdown',
+        file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md',
+        status: 200,
+        message: 'OK',
+      };
+      expect(elem).toEqual(obj);
+      done();
+    });
   });
 });

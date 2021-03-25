@@ -1,6 +1,5 @@
 const api = require('./api');
 
-// Debería ser (path,options)
 const mdLinks = (path, option) => {
   const absPath = api.absolutePath(path);
   const pathIsValid = api.validPath(absPath);

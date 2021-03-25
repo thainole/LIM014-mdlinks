@@ -54,6 +54,7 @@ const getMdLinks = (paths) => {
 };
 
 const validLink = (arr) => fetch(arr.href).then((res) => {
+  console.log(arr);
   const mystatus = res.status;
   const mymessage = res.statusText;
   const newObj = {
