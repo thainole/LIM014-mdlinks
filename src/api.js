@@ -2,6 +2,10 @@ const path = require('path');
 const fs = require('fs');
 const fetch = require('node-fetch');
 
+/* const ruta = 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks';
+const rutab = 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md';
+const rutac = 'D:\\Carpeta'; */
+
 /* Función para volver un path absoluto y validar la ruta */
 const absolutePath = (paths) => (path.isAbsolute(paths) ? paths : path.resolve(paths));
 const validPath = (paths) => fs.existsSync(paths);
@@ -53,17 +57,27 @@ const getMdLinks = (paths) => {
   return linksArr;
 };
 
-const validLink = (arr) => fetch(arr.href).then((res) => {
-  console.log(arr);
-  const mystatus = res.status;
-  const mymessage = res.statusText;
-  const newObj = {
-    ...arr,
-    status: mystatus,
-    message: mymessage,
-  };
-  return newObj;
-});
+const validLink = (arr) => fetch(arr.href)
+  .then((res) => {
+    const mystatus = res.status;
+    const mymessage = res.statusText;
+    const newObj = {
+      ...arr,
+      status: mystatus,
+      message: mymessage,
+    };
+    return newObj;
+  })
+  .catch(() => {
+    const mystatus = 404;
+    const mymessage = 'FAIL';
+    const newObj = {
+      ...arr,
+      status: mystatus,
+      message: mymessage,
+    };
+    return newObj;
+  });
 
 module.exports = {
   absolutePath,

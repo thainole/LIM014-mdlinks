@@ -5,7 +5,8 @@ const mdLinks = (path, option) => {
   const pathIsValid = api.validPath(absPath);
   const promise = new Promise((resolve, reject) => {
     if (pathIsValid === false) {
-      reject();
+      // eslint-disable-next-line prefer-promise-reject-errors
+      reject('The path is not valid. Try with another one.');
     } else {
       const getFiles = api.getMdFiles(absPath);
       const getLinks = api.getMdLinks(getFiles);
@@ -25,8 +26,8 @@ const mdLinks = (path, option) => {
   return promise;
 };
 
-mdLinks('../LIM014-mdlinks', { validate: true })
+/* mdLinks('../LIM014-mdlinks', { validate: true })
   .then((result) => console.log(result))
-  .catch(console.error);
-
+  .catch((err) => console.log(err));
+ */
 module.exports = mdLinks;

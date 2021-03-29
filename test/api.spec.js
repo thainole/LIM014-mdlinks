@@ -61,32 +61,49 @@ describe('Get md links', () => {
         file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md',
       },
     ];
-    expect(getMdLinks(['D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md'])).toStrictEqual(result);
+    expect(getMdLinks(['D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md'])).toEqual(result);
   });
 
   it('Throws an empty array', () => {
     const result = [];
-    expect(getMdLinks(['D:\\Carpeta\\primer-archivo.md'])).toStrictEqual(result);
+    expect(getMdLinks(['D:\\Carpeta\\primer-archivo.md'])).toEqual(result);
   });
 });
 
 describe('Validate link', () => {
-  test('Promise', (done) => {
+  test('OK', () => {
     const arr = {
       href: 'https://es.wikipedia.org/wiki/Markdown',
       text: 'Markdown',
       file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md',
     };
-    validLink(arr).then((elem) => {
-      const obj = {
-        href: 'https://es.wikipedia.org/wiki/Markdown',
-        text: 'Markdown',
-        file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md',
-        status: 200,
-        message: 'OK',
-      };
-      expect(elem).toEqual(obj);
-      done();
+    const obj = {
+      href: 'https://es.wikipedia.org/wiki/Markdown',
+      text: 'Markdown',
+      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md',
+      status: 200,
+      message: 'OK',
+    };
+    return validLink(arr).then((result) => {
+      expect(result).toEqual(obj);
+    });
+  });
+
+  test('FAIL', () => {
+    const arr = {
+      href: 'https://es.wikipedia.og/wiki/Markdown',
+      text: 'Markdown',
+      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md',
+    };
+    const obj = {
+      href: 'https://es.wikipedia.og/wiki/Markdown',
+      text: 'Markdown',
+      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md',
+      status: 404,
+      message: 'FAIL',
+    };
+    return validLink(arr).catch((err) => {
+      expect(err).toEqual(obj);
     });
   });
 });
