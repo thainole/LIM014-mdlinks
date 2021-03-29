@@ -10,7 +10,7 @@
     "test": "jest --verbose --coverage",
     "eslint": "eslint --ext .js test/",
     "pretest": "npm run eslint",
-    "nodemon": "nodemon ./src/index.js"
+    "nodemon": "nodemon ./src/cli.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,9 @@
   ],
   "author": "Thais Illescas <thainole@gmail.com>",
   "license": "MIT",
+  "bin": {
+    "md-links": "./cli.js"
+  },
   "bugs": {
     "url": "https://github.com/thainole/LIM014-mdlinks/issues"
   },

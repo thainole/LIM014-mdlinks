@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1617041265904" clover="3.2.0">
-  <project timestamp="1617041265905" name="All files">
+<coverage generated="1617055248061" clover="3.2.0">
+  <project timestamp="1617055248061" name="All files">
     <metrics statements="62" coveredstatements="61" conditionals="18" coveredconditionals="18" methods="14" coveredmethods="13" elements="94" coveredelements="92" complexity="0" loc="62" ncloc="62" packages="1" files="2" classes="2"/>
     <file name="api.js" path="D:\Documentos\Laboratoria\Bootcamp\LIM014-mdlinks\src\api.js">
       <metrics statements="44" coveredstatements="44" conditionals="12" coveredconditionals="12" methods="10" coveredmethods="10"/>
@@ -11,18 +11,18 @@
       <line num="11" count="5" type="stmt"/>
       <line num="14" count="2" type="stmt"/>
       <line num="15" count="2" type="stmt"/>
-      <line num="16" count="1354" type="stmt"/>
-      <line num="17" count="1354" type="stmt"/>
-      <line num="18" count="1354" type="stmt"/>
-      <line num="20" count="1354" type="cond" truecount="4" falsecount="0"/>
-      <line num="21" count="513" type="stmt"/>
-      <line num="22" count="513" type="cond" truecount="2" falsecount="0"/>
-      <line num="23" count="507" type="stmt"/>
-      <line num="24" count="1350" type="stmt"/>
-      <line num="25" count="1350" type="stmt"/>
-      <line num="28" count="841" type="cond" truecount="2" falsecount="0"/>
+      <line num="16" count="1429" type="stmt"/>
+      <line num="17" count="1429" type="stmt"/>
+      <line num="18" count="1429" type="stmt"/>
+      <line num="20" count="1429" type="cond" truecount="4" falsecount="0"/>
+      <line num="21" count="534" type="stmt"/>
+      <line num="22" count="534" type="cond" truecount="2" falsecount="0"/>
+      <line num="23" count="528" type="stmt"/>
+      <line num="24" count="1425" type="stmt"/>
+      <line num="25" count="1425" type="stmt"/>
+      <line num="28" count="895" type="cond" truecount="2" falsecount="0"/>
       <line num="29" count="4" type="stmt"/>
-      <line num="31" count="1354" type="stmt"/>
+      <line num="31" count="1429" type="stmt"/>
       <line num="34" count="2" type="stmt"/>
       <line num="35" count="2" type="stmt"/>
       <line num="36" count="2" type="stmt"/>
