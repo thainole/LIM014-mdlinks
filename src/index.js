@@ -3,6 +3,7 @@ const api = require('./api');
 const mdLinks = (path, option) => {
   const absPath = api.absolutePath(path);
   const pathIsValid = api.validPath(absPath);
+
   const promise = new Promise((resolve, reject) => {
     if (pathIsValid === false) {
       // eslint-disable-next-line prefer-promise-reject-errors
@@ -26,8 +27,8 @@ const mdLinks = (path, option) => {
   return promise;
 };
 
-mdLinks('../LIM014-mdlinks', { validate: true })
+/* mdLinks('./prueba', { validate: true })
   .then((result) => console.log(result))
-  .catch((err) => console.log(err));
+  .catch((err) => console.log(err)); */
 
 module.exports = mdLinks;

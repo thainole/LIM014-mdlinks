@@ -1,0 +1,59 @@
+const {
+  validLink,
+} = require('../src/api.js');
+
+describe('Validate link', () => {
+  test('OK - 200', () => {
+    const arr = {
+      href: 'https://nodejs.org/',
+      text: 'Node.js',
+      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\prueba\\hola.md',
+    };
+    const obj = {
+      href: 'https://nodejs.org/',
+      text: 'Node.js',
+      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\prueba\\hola.md',
+      status: 200,
+      message: 'OK',
+    };
+    return validLink(arr).then((res) => {
+      expect(res).toEqual(obj);
+    });
+  });
+
+  test('FAIL - status', () => {
+    const arr = {
+      href: 'https://httpstat.us/500',
+      text: 'Status 500',
+      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\prueba\\random\\failed-links.md',
+    };
+    const obj = {
+      href: 'https://httpstat.us/500',
+      text: 'Status 500',
+      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\prueba\\random\\failed-links.md',
+      status: 500,
+      message: 'FAIL',
+    };
+    return validLink(arr).then((res) => {
+      expect(res).toEqual(obj);
+    });
+  });
+
+  test('FAIL - no status', () => {
+    const arr = {
+      href: 'https://holasoythais.holaperu/',
+      text: 'No funciona',
+      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\prueba\\random\\failed-links.md',
+    };
+    const obj = {
+      href: 'https://holasoythais.holaperu/',
+      text: 'No funciona',
+      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\prueba\\random\\failed-links.md',
+      status: 'no status',
+      message: 'FAIL',
+    };
+    return validLink(arr).catch((err) => {
+      expect(err).toEqual(obj);
+    });
+  });
+});

@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "jest --verbose --coverage",
-    "eslint": "eslint --ext .js test/",
+    "eslint": "eslint --ext .js __test__/",
     "pretest": "npm run eslint",
     "nodemon": "nodemon ./src/index.js"
   },

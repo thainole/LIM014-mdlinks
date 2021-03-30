@@ -3,7 +3,6 @@ const {
   validPath,
   getMdFiles,
   getMdLinks,
-  validLink,
 } = require('../src/api.js');
 
 describe('Resolve Path', () => {
@@ -67,43 +66,5 @@ describe('Get md links', () => {
   it('Throws an empty array', () => {
     const result = [];
     expect(getMdLinks(['D:\\Carpeta\\primer-archivo.md'])).toEqual(result);
-  });
-});
-
-describe('Validate link', () => {
-  test('OK', () => {
-    const arr = {
-      href: 'https://es.wikipedia.org/wiki/Markdown',
-      text: 'Markdown',
-      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md',
-    };
-    const obj = {
-      href: 'https://es.wikipedia.org/wiki/Markdown',
-      text: 'Markdown',
-      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md',
-      status: 200,
-      message: 'OK',
-    };
-    return validLink(arr).then((result) => {
-      expect(result).toEqual(obj);
-    });
-  });
-
-  test('FAIL', () => {
-    const arr = {
-      href: 'https://es.wikipedia.og/wiki/Markdown',
-      text: 'Markdown',
-      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md',
-    };
-    const obj = {
-      href: 'https://es.wikipedia.og/wiki/Markdown',
-      text: 'Markdown',
-      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md',
-      status: 404,
-      message: 'FAIL',
-    };
-    return validLink(arr).catch((err) => {
-      expect(err).toEqual(obj);
-    });
   });
 });

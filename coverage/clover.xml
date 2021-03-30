@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1617055248061" clover="3.2.0">
-  <project timestamp="1617055248061" name="All files">
-    <metrics statements="62" coveredstatements="61" conditionals="18" coveredconditionals="18" methods="14" coveredmethods="13" elements="94" coveredelements="92" complexity="0" loc="62" ncloc="62" packages="1" files="2" classes="2"/>
+<coverage generated="1617127884614" clover="3.2.0">
+  <project timestamp="1617127884614" name="All files">
+    <metrics statements="62" coveredstatements="61" conditionals="20" coveredconditionals="20" methods="14" coveredmethods="13" elements="96" coveredelements="94" complexity="0" loc="62" ncloc="62" packages="1" files="2" classes="2"/>
     <file name="api.js" path="D:\Documentos\Laboratoria\Bootcamp\LIM014-mdlinks\src\api.js">
-      <metrics statements="44" coveredstatements="44" conditionals="12" coveredconditionals="12" methods="10" coveredmethods="10"/>
-      <line num="1" count="2" type="stmt"/>
-      <line num="2" count="2" type="stmt"/>
-      <line num="3" count="2" type="stmt"/>
+      <metrics statements="44" coveredstatements="44" conditionals="14" coveredconditionals="14" methods="10" coveredmethods="10"/>
+      <line num="1" count="3" type="stmt"/>
+      <line num="2" count="3" type="stmt"/>
+      <line num="4" count="3" type="stmt"/>
       <line num="10" count="6" type="cond" truecount="2" falsecount="0"/>
       <line num="11" count="5" type="stmt"/>
-      <line num="14" count="2" type="stmt"/>
-      <line num="15" count="2" type="stmt"/>
-      <line num="16" count="1429" type="stmt"/>
-      <line num="17" count="1429" type="stmt"/>
-      <line num="18" count="1429" type="stmt"/>
-      <line num="20" count="1429" type="cond" truecount="4" falsecount="0"/>
-      <line num="21" count="534" type="stmt"/>
-      <line num="22" count="534" type="cond" truecount="2" falsecount="0"/>
-      <line num="23" count="528" type="stmt"/>
-      <line num="24" count="1425" type="stmt"/>
-      <line num="25" count="1425" type="stmt"/>
-      <line num="28" count="895" type="cond" truecount="2" falsecount="0"/>
-      <line num="29" count="4" type="stmt"/>
-      <line num="31" count="1429" type="stmt"/>
-      <line num="34" count="2" type="stmt"/>
-      <line num="35" count="2" type="stmt"/>
-      <line num="36" count="2" type="stmt"/>
-      <line num="39" count="2" type="stmt"/>
+      <line num="14" count="3" type="stmt"/>
+      <line num="15" count="3" type="stmt"/>
+      <line num="16" count="1546" type="stmt"/>
+      <line num="17" count="1546" type="stmt"/>
+      <line num="18" count="1546" type="stmt"/>
+      <line num="20" count="1546" type="cond" truecount="4" falsecount="0"/>
+      <line num="21" count="570" type="stmt"/>
+      <line num="22" count="570" type="cond" truecount="2" falsecount="0"/>
+      <line num="23" count="564" type="stmt"/>
+      <line num="24" count="1542" type="stmt"/>
+      <line num="25" count="1542" type="stmt"/>
+      <line num="28" count="976" type="cond" truecount="2" falsecount="0"/>
+      <line num="29" count="16" type="stmt"/>
+      <line num="31" count="1546" type="stmt"/>
+      <line num="34" count="3" type="stmt"/>
+      <line num="35" count="3" type="stmt"/>
+      <line num="36" count="3" type="stmt"/>
+      <line num="39" count="3" type="stmt"/>
       <line num="40" count="5" type="stmt"/>
       <line num="41" count="5" type="stmt"/>
-      <line num="42" count="8" type="stmt"/>
-      <line num="43" count="8" type="stmt"/>
-      <line num="44" count="8" type="cond" truecount="2" falsecount="0"/>
-      <line num="45" count="7" type="stmt"/>
-      <line num="46" count="14" type="stmt"/>
-      <line num="47" count="14" type="stmt"/>
-      <line num="48" count="14" type="stmt"/>
-      <line num="53" count="14" type="stmt"/>
-      <line num="57" count="5" type="stmt"/>
-      <line num="60" count="8" type="stmt"/>
-      <line num="62" count="1" type="stmt"/>
-      <line num="63" count="1" type="stmt"/>
-      <line num="64" count="1" type="stmt"/>
-      <line num="69" count="1" type="stmt"/>
+      <line num="42" count="28" type="stmt"/>
+      <line num="43" count="27" type="stmt"/>
+      <line num="44" count="27" type="cond" truecount="2" falsecount="0"/>
+      <line num="45" count="17" type="stmt"/>
+      <line num="46" count="29" type="stmt"/>
+      <line num="47" count="29" type="stmt"/>
+      <line num="48" count="29" type="stmt"/>
+      <line num="53" count="29" type="stmt"/>
+      <line num="57" count="4" type="stmt"/>
+      <line num="60" count="15" type="stmt"/>
+      <line num="62" count="2" type="stmt"/>
+      <line num="63" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="64" count="2" type="stmt"/>
+      <line num="69" count="2" type="stmt"/>
       <line num="72" count="1" type="stmt"/>
       <line num="73" count="1" type="stmt"/>
       <line num="74" count="1" type="stmt"/>
       <line num="79" count="1" type="stmt"/>
-      <line num="82" count="2" type="stmt"/>
+      <line num="82" count="3" type="stmt"/>
     </file>
     <file name="index.js" path="D:\Documentos\Laboratoria\Bootcamp\LIM014-mdlinks\src\index.js">
       <metrics statements="18" coveredstatements="17" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="3"/>
@@ -55,20 +55,20 @@
       <line num="3" count="1" type="stmt"/>
       <line num="4" count="4" type="stmt"/>
       <line num="5" count="4" type="stmt"/>
-      <line num="6" count="4" type="stmt"/>
-      <line num="7" count="4" type="cond" truecount="2" falsecount="0"/>
-      <line num="9" count="1" type="stmt"/>
-      <line num="11" count="3" type="stmt"/>
+      <line num="7" count="4" type="stmt"/>
+      <line num="8" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="10" count="1" type="stmt"/>
       <line num="12" count="3" type="stmt"/>
-      <line num="13" count="3" type="cond" truecount="4" falsecount="0"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="15" count="6" type="stmt"/>
-      <line num="16" count="6" type="stmt"/>
-      <line num="18" count="1" type="stmt"/>
-      <line num="19" count="0" type="stmt"/>
-      <line num="22" count="2" type="stmt"/>
-      <line num="26" count="4" type="stmt"/>
-      <line num="33" count="1" type="stmt"/>
+      <line num="13" count="3" type="stmt"/>
+      <line num="14" count="3" type="cond" truecount="4" falsecount="0"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="16" count="12" type="stmt"/>
+      <line num="17" count="12" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="20" count="0" type="stmt"/>
+      <line num="23" count="2" type="stmt"/>
+      <line num="27" count="4" type="stmt"/>
+      <line num="34" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
