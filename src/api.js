@@ -4,7 +4,6 @@ const fetch = require('node-fetch');
 
 /* const ruta = 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks';
 const rutab = 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md';
-const rutac = 'D:\\Carpeta'; */
 
 /* Función para volver un path absoluto y validar la ruta */
 const absolutePath = (paths) => (path.isAbsolute(paths) ? paths : path.resolve(paths));
@@ -68,15 +67,26 @@ const validLink = (arr) => fetch(arr.href)
     };
     return newObj;
   })
-  .catch(() => {
-    const mystatus = 404;
-    const mymessage = 'FAIL';
-    const newObj = {
-      ...arr,
-      status: mystatus,
-      message: mymessage,
-    };
-    return newObj;
+  .catch((err) => {
+    if (err.status) {
+      const mystatus = err.status;
+      const mymessage = 'FAIL';
+      const newObj = {
+        ...arr,
+        status: mystatus,
+        message: mymessage,
+      };
+      return newObj;
+    }
+    if (!err.status) {
+      const newObj = {
+        ...arr,
+        status: 'no status',
+        message: 'FAIL',
+      };
+      return newObj;
+    }
+    return arr;
   });
 
 module.exports = {

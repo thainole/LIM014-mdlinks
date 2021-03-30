@@ -26,8 +26,8 @@ const mdLinks = (path, option) => {
   return promise;
 };
 
-/* mdLinks('../LIM014-mdlinks', { validate: true })
+mdLinks('../LIM014-mdlinks', { validate: true })
   .then((result) => console.log(result))
   .catch((err) => console.log(err));
- */
+
 module.exports = mdLinks;
