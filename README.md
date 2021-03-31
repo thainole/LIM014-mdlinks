@@ -17,7 +17,7 @@ algunas estadísticas.
 
 ### 1) JavaScript API
 
-![](./diagrama-de-flujo.jpeg)
+![](./img/diagrama-de-flujo.jpeg)
 
 ### 2) CLI (Command Line Interface - Interfaz de Línea de Comando)
 
