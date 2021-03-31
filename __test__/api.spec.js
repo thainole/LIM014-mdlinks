@@ -44,6 +44,11 @@ describe('Get md files', () => {
     ];
     expect(getMdFiles(`${__dirname}\\files`)).toStrictEqual(result);
   });
+
+  it('verifies if the path is a file md and returns it in an array', () => {
+    const result = [`${__dirname}\\files\\link.md`];
+    expect(getMdFiles(`${__dirname}\\files\\link.md`)).toStrictEqual(result);
+  });
 });
 
 describe('Get md links', () => {
