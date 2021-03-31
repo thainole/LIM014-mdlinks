@@ -16,9 +16,7 @@ const mdLinks = (path, option) => {
           const validating = api.validLink(arr);
           return validating;
         });
-        Promise.all(validatingLinks).then((values) => {
-          console.log(values);
-        });
+        resolve(Promise.all(validatingLinks).then((values) => values));
       } else {
         resolve(getLinks);
       }
@@ -27,8 +25,8 @@ const mdLinks = (path, option) => {
   return promise;
 };
 
-mdLinks('./prueba', { validate: true })
+/* mdLinks('./__test__/files', { validate: true })
   .then((result) => console.log(result))
-  .catch((err) => console.log(err));
+  .catch((err) => console.log(err)); */
 
 module.exports = mdLinks;

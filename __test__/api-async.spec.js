@@ -7,12 +7,12 @@ describe('Validate link', () => {
     const arr = {
       href: 'https://nodejs.org/',
       text: 'Node.js',
-      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\prueba\\hola.md',
+      file: `${__dirname}\\files\\link.md`,
     };
     const obj = {
       href: 'https://nodejs.org/',
       text: 'Node.js',
-      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\prueba\\hola.md',
+      file: `${__dirname}\\files\\link.md`,
       status: 200,
       message: 'OK',
     };
@@ -25,12 +25,12 @@ describe('Validate link', () => {
     const arr = {
       href: 'https://httpstat.us/500',
       text: 'Status 500',
-      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\prueba\\random\\failed-links.md',
+      file: `${__dirname}\\files\\fail\\failed-links.md`,
     };
     const obj = {
       href: 'https://httpstat.us/500',
       text: 'Status 500',
-      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\prueba\\random\\failed-links.md',
+      file: `${__dirname}\\files\\fail\\failed-links.md`,
       status: 500,
       message: 'FAIL',
     };
@@ -43,12 +43,12 @@ describe('Validate link', () => {
     const arr = {
       href: 'https://holasoythais.holaperu/',
       text: 'No funciona',
-      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\prueba\\random\\failed-links.md',
+      file: `${__dirname}\\files\\fail\\failed-links.md`,
     };
     const obj = {
       href: 'https://holasoythais.holaperu/',
       text: 'No funciona',
-      file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\prueba\\random\\failed-links.md',
+      file: `${__dirname}\\files\\fail\\failed-links.md`,
       status: 'no status',
       message: 'FAIL',
     };

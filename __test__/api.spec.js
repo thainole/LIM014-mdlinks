@@ -11,12 +11,12 @@ describe('Resolve Path', () => {
   });
 
   it('Returns the same path if it is absolute', () => {
-    const result = 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks';
-    expect(absolutePath('D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks')).toStrictEqual(result);
+    const result = `${__dirname}/__test__/files`;
+    expect(absolutePath(`${__dirname}/__test__/files`)).toStrictEqual(result);
   });
   it('Resolves the path if it is relative', () => {
-    const result = 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks';
-    expect(absolutePath('../LIM014-mdlinks')).toStrictEqual(result);
+    const result = `${__dirname}\\files`;
+    expect(absolutePath('./__test__/files')).toStrictEqual(result);
   });
 });
 
@@ -27,7 +27,7 @@ describe('Valid Path', () => {
 
   it('verifies if a path is valid', () => {
     const result = true;
-    expect(validPath('D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks')).toStrictEqual(result);
+    expect(validPath(`${__dirname}\\files`)).toStrictEqual(result);
   });
 });
 
@@ -37,8 +37,12 @@ describe('Get md files', () => {
   });
 
   it('verifies if the path is a directory, analize the content and returns only the mdfiles in an array', () => {
-    const result = ['D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md'];
-    expect(getMdFiles('D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks')).toStrictEqual(result);
+    const result = [
+      `${__dirname}\\files\\fail\\failed-links.md`,
+      `${__dirname}\\files\\link.md`,
+      `${__dirname}\\files\\no-link.md`,
+    ];
+    expect(getMdFiles(`${__dirname}\\files`)).toStrictEqual(result);
   });
 });
 
@@ -50,21 +54,11 @@ describe('Get md links', () => {
   it('Put the links in an array, with the href, text and file', () => {
     const result = [
       {
-        href: 'https://es.wikipedia.org/wiki/Markdown',
-        text: 'Markdown',
-        file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md',
-      },
-      {
         href: 'https://nodejs.org/',
         text: 'Node.js',
-        file: 'D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md',
+        file: `${__dirname}\\files\\link.md`,
       },
     ];
-    expect(getMdLinks(['D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\README.md'])).toEqual(result);
+    expect(getMdLinks([`${__dirname}\\files\\link.md`])).toEqual(result);
   });
-
-  /* it('Throws an empty array', () => {
-    const result = [];
-    expect(getMdLinks(['D:\\Carpeta\\primer-archivo.md'])).toEqual(result);
-  }); */
 });
