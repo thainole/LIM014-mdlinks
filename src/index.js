@@ -27,8 +27,8 @@ const mdLinks = (path, option) => {
   return promise;
 };
 
-/* mdLinks('./prueba', { validate: true })
+mdLinks('./prueba', { validate: true })
   .then((result) => console.log(result))
-  .catch((err) => console.log(err)); */
+  .catch((err) => console.log(err));
 
 module.exports = mdLinks;

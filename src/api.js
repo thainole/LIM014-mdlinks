@@ -8,25 +8,25 @@ const absolutePath = (paths) => (path.isAbsolute(paths) ? paths : path.resolve(p
 const validPath = (paths) => fs.existsSync(paths);
 
 /* Función para obtener los MD files */
-const elemArr = [];
 const getMdFiles = (paths) => {
-  const extName = path.extname(paths);
-  const pathName = path.basename(paths);
+  const elemArr = [];
   const infoPath = fs.statSync(paths);
 
-  if (infoPath.isDirectory() && pathName !== 'node_modules') {
+  if (infoPath.isDirectory()) {
     const dirElem = fs.readdirSync(paths);
     if (dirElem.length > 0) {
-      dirElem.forEach((elem) => {
+      return dirElem.reduce((acc, elem) => {
         const newAbsPath = path.join(paths, elem);
-        getMdFiles(newAbsPath);
-      });
+        return acc.concat(getMdFiles(newAbsPath)); // del callback del reduce
+      }, []);
     }
-  } else if (extName === '.md') {
+  } else if (path.extname(paths) === '.md') {
     elemArr.push(paths);
   }
   return elemArr;
 };
+
+// console.log(getMdFiles('D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\prueba'));
 
 const regx = /\[([\w\s\d.()]+)\]\(((?:\/|https?:\/\/)[\w\d./?=#&_%~,.:-]+)\)/mg;
 const regxLink = /\(((?:\/|https?:\/\/)[\w\d./?=#&_%~,.:-]+)\)/mg;

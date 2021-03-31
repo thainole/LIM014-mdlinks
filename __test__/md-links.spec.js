@@ -52,9 +52,7 @@ describe('mdLinks', () => {
       status: 200,
       text: "Node.js",
     }];
-    return mdLinks('./README.md', { validate: true }).then((result) => {
-      expect(result).toEqual(obj);
-    });
+    expect(mdLinks('./README.md', { validate: true })).resolves.toBe(obj);
   });
 
   test('returns an error when path is not valid', () => {
