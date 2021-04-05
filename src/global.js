@@ -23,8 +23,11 @@ if (arg.length === 5) {
   } else if (arg[3] === '--validate') {
     mdLinks(path, { validate: true })
       .then((res) => console.log(res.map((obj) => {
-        const route = paths.relative(path, obj.file);
-        return `..\\${route}  ${obj.href}  ${obj.message}  ${obj.status}  ${obj.text}`;
+        const route = paths.relative(__dirname, obj.file);
+        if (obj.text.length > 50) {
+          return obj.text.slice(0, 50);
+        }
+        return `${route}  ${obj.href}  ${obj.message}  ${obj.status}  ${obj.text}`;
       }).join('\n')))
       .catch((err) => console.log(err));
   } else if (arg[3] === '--help') {

@@ -26,8 +26,6 @@ const getMdFiles = (paths) => {
   return elemArr;
 };
 
-// console.log(getMdFiles('D:\\Documentos\\Laboratoria\\Bootcamp\\LIM014-mdlinks\\prueba'));
-
 const regx = /\[([\w\s\d.()]+)\]\(((?:\/|https?:\/\/)[\w\d./?=#&_%~,.:-]+)\)/mg;
 const regxLink = /\(((?:\/|https?:\/\/)[\w\d./?=#&_%~,.:-]+)\)/mg;
 const regxText = /\[([\w\s\d.()]+)\]/g;
