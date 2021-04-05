@@ -17,9 +17,11 @@ algunas estadísticas.
 
 ### 1) JavaScript API
 
-![](./img/diagrama-de-flujo.jpeg)
+![](./img/diagrama-api.jpeg)
 
 ### 2) CLI (Command Line Interface - Interfaz de Línea de Comando)
+
+![](./img/diagrama-cli.jpeg)
 
 
 ## Checklist
@@ -50,6 +52,6 @@ algunas estadísticas.
 
 ### Pruebas / tests
 
-* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions,
+* [x] Pruebas unitarias cubren un mínimo del 70% de statements, functions,
   lines, y branches.
-* [ ] Pasa tests (y linters) (`npm test`).
+* [x] Pasa tests (y linters) (`npm test`).
