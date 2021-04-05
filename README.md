@@ -33,7 +33,7 @@ algunas estadísticas.
 ### `README.md`
 
 * [ ] Un board con el backlog para la implementación de la librería.
-* [ ] Documentación técnica de la librería.
+* [x] Documentación técnica de la librería.
 * [ ] Guía de uso e instalación de la librería
 
 ### API `mdLinks(path, opts)`
@@ -46,7 +46,7 @@ algunas estadísticas.
 ### CLI
 
 * [x] Expone ejecutable `md-links` en el path (configurado en `package.json`)
-* [ ] Se ejecuta sin errores / output esperado
+* [x] Se ejecuta sin errores / output esperado
 * [x] Implementa `--validate`
 * [x] Implementa `--stats`
 
