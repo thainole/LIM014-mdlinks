@@ -15,43 +15,23 @@ herramienta usando [Node.js](https://nodejs.org/), que lea y analice archivos
 en formato `Markdown`, para verificar los links que contengan y reportar
 algunas estadísticas.
 
-### 1) JavaScript API
+## INSTALACIÓN
+:)
+
+## GUÍA DE USO
+![](./img/only-path.png)
+![](./img/flag-stats.png)
+![](./img/flag-validate.png)
+![](./img/flag-stats-validate.png)
+![](./img/wrong-flag.png)
+![](./img/flag-help.png)
+
+
+## DIAGRAMAS DE FLUJO
+### 1) API
 
 ![](./img/diagrama-api.jpeg)
 
 ### 2) CLI (Command Line Interface - Interfaz de Línea de Comando)
 
 ![](./img/diagrama-cli.jpeg)
-
-
-## Checklist
-
-### General
-
-* [ ] Puede instalarse via `npm install --global <github-user>/md-links`
-
-### `README.md`
-
-* [ ] Un board con el backlog para la implementación de la librería.
-* [x] Documentación técnica de la librería.
-* [ ] Guía de uso e instalación de la librería
-
-### API `mdLinks(path, opts)`
-
-* [x] El módulo exporta una función con la interfaz (API) esperada.
-* [x] Implementa soporte para archivo individual
-* [x] Implementa soporte para directorios
-* [x] Implementa `options.validate`
-
-### CLI
-
-* [x] Expone ejecutable `md-links` en el path (configurado en `package.json`)
-* [x] Se ejecuta sin errores / output esperado
-* [x] Implementa `--validate`
-* [x] Implementa `--stats`
-
-### Pruebas / tests
-
-* [x] Pruebas unitarias cubren un mínimo del 70% de statements, functions,
-  lines, y branches.
-* [x] Pasa tests (y linters) (`npm test`).

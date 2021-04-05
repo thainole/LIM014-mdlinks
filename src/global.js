@@ -19,7 +19,7 @@ const helpText = `
 Let me help you with the commands after the path:
 ${magenta('--stats')} is used to get the total number of links, and the ones that are not repeated (unique links).
 ${magenta('--validate')} is used to validate each link (if it is OK or FAIL, depending on the status), and also obtain its href, text, and file.
-If you use both ${magenta('(--stats --validate)')} you could get the total of links, the uniques and broken ones.
+If you use both ${magenta('(--stats --validate)')} you can get the total of links, the uniques and broken ones.
 In case you do not use any of them and ${chalk.italic('only insert the path')}, you will get just the href, text and file of each link.
 
 **********************************************************************************************************************************
