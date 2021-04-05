@@ -1,7 +1,7 @@
 const statsOnly = (arrObj) => {
   const allLinks = arrObj.map((elem) => elem.href);
   const uniqueLinks = (new Set(allLinks)).size;
-  return `Total: ${allLinks.length}, Unique: ${uniqueLinks}`;
+  return `Total: ${allLinks.length}\nUnique: ${uniqueLinks}`;
 };
 
 const brokenLinks = (arrObj) => {

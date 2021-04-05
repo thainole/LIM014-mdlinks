@@ -16,7 +16,7 @@ describe('Stats Only', () => {
       status: 200,
       text: 'Node.js',
     }];
-    const result = 'Total: 1, Unique: 1';
+    const result = 'Total: 1\nUnique: 1';
     expect(statsOnly(obj)).toStrictEqual(result);
   });
 });
