@@ -4,7 +4,10 @@ La librería `md-links` -creada con [Node.js](https://nodejs.org/)- se encarga d
 [Markdown](https://es.wikipedia.org/wiki/Markdown)  para verificar los links que contengan y reportar algunas estadísticas, ya que muchos de estos links pueden encontrarse rotos o ya no son válidos y perjudican el valor de la información que se desea compartir.
 
 ## INSTALACIÓN
-:)
+
+Puede instalarse de la siguiente forma: 
+
+`$ npm i --global thainole/LIM014-mdlinks`
 
 ## GUÍA DE USO
 En la línea de interfaz de comando (CLI), se coloca lo siguiente:
