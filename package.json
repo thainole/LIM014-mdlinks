@@ -10,7 +10,7 @@
     "test": "jest --verbose --coverage",
     "eslint": "eslint --ext .js __test__/",
     "pretest": "npm run eslint",
-    "nodemon": "nodemon ./src/global.js"
+    "nodemon": "nodemon ./src/api.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.0",
+    "fetch-mock": "^9.11.0",
     "jest": "^26.6.3",
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.7"

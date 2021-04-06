@@ -45,9 +45,16 @@ describe('Get md files', () => {
     expect(getMdFiles(`${__dirname}\\files`)).toStrictEqual(result);
   });
 
+  it('returns an empty array if the folder does not have elements', () => {
+    expect(getMdFiles(`${__dirname}\\files\\empty`)).toStrictEqual([]);
+  });
+
   it('verifies if the path is a file md and returns it in an array', () => {
     const result = [`${__dirname}\\files\\link.md`];
     expect(getMdFiles(`${__dirname}\\files\\link.md`)).toStrictEqual(result);
+  });
+  it('returns an empty array if the file is not .md', () => {
+    expect(getMdFiles(`${__dirname}\\files\\hello.html`)).toStrictEqual([]);
   });
 });
 
@@ -64,6 +71,10 @@ describe('Get md links', () => {
         file: `${__dirname}\\files\\link.md`,
       },
     ];
-    expect(getMdLinks([`${__dirname}\\files\\link.md`])).toEqual(result);
+    expect(getMdLinks([`${__dirname}\\files\\link.md`])).toStrictEqual(result);
+  });
+
+  it('returns an empty array if the folder does not have links', () => {
+    expect(getMdLinks([`${__dirname}\\files\\no-link.md`])).toStrictEqual([]);
   });
 });

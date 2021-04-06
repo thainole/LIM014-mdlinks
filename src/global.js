@@ -26,7 +26,7 @@ In case you do not use any of them and ${chalk.italic('only insert the path')}, 
 `;
 
 if (arg.length === 5) {
-  if (arg.includes('--stats' && '--validate')) {
+  if (arg.includes('--stats') && arg.includes('--validate')) {
     mdLinks(path, { validate: true })
       .then((res) => console.log(`${blue(statsOnly(res))}\n${red(brokenLinks(res))}`))
       .catch((err) => console.log(red(err)));

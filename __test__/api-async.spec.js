@@ -1,6 +1,7 @@
-const {
-  validLink,
-} = require('../src/api.js');
+jest.mock('node-fetch');
+const fetch = require('node-fetch');
+
+const { validLink } = require('../src/api.js');
 
 describe('Validate link', () => {
   test('OK - 200', () => {
@@ -16,6 +17,11 @@ describe('Validate link', () => {
       status: 200,
       message: 'OK',
     };
+    fetch.mockImplementation(() => Promise.resolve({
+      status: 200,
+      statusText: 'OK',
+    }));
+
     return validLink(arr).then((res) => {
       expect(res).toEqual(obj);
     });
@@ -23,17 +29,21 @@ describe('Validate link', () => {
 
   test('FAIL - status', () => {
     const arr = {
-      href: 'https://httpstat.us/500',
-      text: 'Status 500',
+      href: 'https://abc.github.io/assets404/',
+      text: 'Github fail',
       file: `${__dirname}\\files\\fail\\failed-links.md`,
     };
     const obj = {
-      href: 'https://httpstat.us/500',
-      text: 'Status 500',
+      href: 'https://abc.github.io/assets404/',
+      text: 'Github fail',
       file: `${__dirname}\\files\\fail\\failed-links.md`,
-      status: 500,
+      status: 404,
       message: 'FAIL',
     };
+    fetch.mockImplementation(() => Promise.resolve({
+      status: 404,
+      statusText: 'Not Found',
+    }));
     return validLink(arr).then((res) => {
       expect(res).toEqual(obj);
     });
@@ -41,17 +51,19 @@ describe('Validate link', () => {
 
   test('FAIL - no status', () => {
     const arr = {
-      href: 'https://holasoythais.holaperu/',
-      text: 'No funciona',
+      href: 'https://helloeveryone.imjanedoe/',
+      text: 'Failed Link',
       file: `${__dirname}\\files\\fail\\failed-links.md`,
     };
     const obj = {
-      href: 'https://holasoythais.holaperu/',
-      text: 'No funciona',
+      href: 'https://helloeveryone.imjanedoe/',
+      text: 'Failed Link',
       file: `${__dirname}\\files\\fail\\failed-links.md`,
       status: 'no status',
       message: 'FAIL',
     };
+    // eslint-disable-next-line prefer-promise-reject-errors
+    fetch.mockImplementation(() => Promise.reject({}));
     return validLink(arr).catch((err) => {
       expect(err).toEqual(obj);
     });

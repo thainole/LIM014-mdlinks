@@ -1,2 +1,2 @@
-[Status 500](https://httpstat.us/500)
+[Github fail](https://abc.github.io/assets404/)
 [Failed Link](https://helloeveryone.imjanedoe/)
