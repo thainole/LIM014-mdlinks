@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1617739761736" clover="3.2.0">
-  <project timestamp="1617739761736" name="All files">
+<coverage generated="1617751372286" clover="3.2.0">
+  <project timestamp="1617751372286" name="All files">
     <metrics statements="65" coveredstatements="65" conditionals="18" coveredconditionals="18" methods="18" coveredmethods="17" elements="101" coveredelements="100" complexity="0" loc="65" ncloc="65" packages="1" files="3" classes="3"/>
     <file name="api.js" path="D:\Documentos\Laboratoria\Bootcamp\LIM014-mdlinks\src\api.js">
       <metrics statements="42" coveredstatements="42" conditionals="12" coveredconditionals="12" methods="10" coveredmethods="10"/>
