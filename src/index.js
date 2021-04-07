@@ -14,7 +14,7 @@ const mdLinks = (path, option) => new Promise((resolve, reject) => {
         const validating = api.validLink(arr);
         return validating;
       });
-      resolve(Promise.all(validatingLinks).then((values) => values));
+      resolve(Promise.all(validatingLinks));
     } else {
       resolve(getLinks);
     }

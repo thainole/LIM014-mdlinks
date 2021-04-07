@@ -5,7 +5,13 @@ La librería `md-links` -creada con [Node.js](https://nodejs.org/)- se encarga d
 
 ## INSTALACIÓN
 
+Por npm: 
+
 `$ npm i lim014-mdlinks`
+
+Por repo de github: 
+
+`$ npm i --global thainole/LIM014-mdlinks`
 
 ## GUÍA DE USO
 
@@ -20,21 +26,21 @@ Esta es una promesa que recibe dos parámetros: `path` (ruta absoluta o relativa
 
 **Ejemplos de uso:**
 ```js
-const mdLinks = require("md-links");
+const mdLinks = require('lim014-mdlinks');
 
-mdLinks("./some/example.md")
+mdLinks('./some/example.md')
   .then(links => {
     // => [{ href, text, file }]
   })
   .catch(console.error);
 
-mdLinks("./some/example.md", { validate: true })
+mdLinks('./some/example.md', { validate: true })
   .then(links => {
     // => [{ href, text, file, status, ok }]
   })
   .catch(console.error);
 
-mdLinks("./some/dir")
+mdLinks('./some/dir')
   .then(links => {
     // => [{ href, text, file }]
   })
@@ -80,5 +86,5 @@ Para poder realizar esta librería, se realizaron 2 diagramas de flujo para cada
 
 ### 2) CLI (Command Line Interface - Interfaz de Línea de Comando)
 
-![](./img/diagrama-cli.jpeg)
+![](./img/diagrama-cli.png)
 
