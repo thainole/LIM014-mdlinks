@@ -21,8 +21,4 @@ const mdLinks = (path, option) => new Promise((resolve, reject) => {
   }
 });
 
-/* mdLinks('./__test__/files', { validate: true })
-  .then((result) => console.log(result))
-  .catch((err) => console.log(err)); */
-
 module.exports = mdLinks;

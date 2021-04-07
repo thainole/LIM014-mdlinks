@@ -7,6 +7,7 @@ const { brokenLinks, statsOnly } = require('./cli.js');
 
 const arg = process.argv;
 const path = arg[2];
+
 const green = chalk.green.bold;
 const blue = chalk.blue.bold;
 const red = chalk.red.bold;
