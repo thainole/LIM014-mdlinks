@@ -1,6 +1,6 @@
 {
   "name": "lim014-mdlinks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "a node.js library that validates links of markdown files",
   "main": "index.js",
   "directories": {
