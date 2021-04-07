@@ -12,9 +12,6 @@
     "pretest": "npm run eslint",
     "nodemon": "nodemon ./src/api.js"
   },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thainole/LIM014-mdlinks.git"

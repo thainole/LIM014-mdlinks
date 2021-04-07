@@ -54,7 +54,7 @@ describe('Get md files', () => {
     expect(getMdFiles(`${__dirname}\\files\\link.md`)).toStrictEqual(result);
   });
   it('returns an empty array if the file is not .md', () => {
-    expect(getMdFiles(`${__dirname}\\files\\hello.html`)).toStrictEqual([]);
+    expect(getMdFiles(`${__dirname}\\files\\hello.js`)).toStrictEqual([]);
   });
 });
 
