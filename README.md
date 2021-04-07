@@ -5,11 +5,43 @@ La librería `md-links` -creada con [Node.js](https://nodejs.org/)- se encarga d
 
 ## INSTALACIÓN
 
-Puede instalarse de la siguiente forma: 
-
 `$ npm i lim014-mdlinks`
 
 ## GUÍA DE USO
+
+### API
+
+Para acceder a `mdLinks`, debemos importarla con  
+
+`const mdLinks = require('lim014-mdlinks')` 
+
+Esta es una promesa que recibe dos parámetros: `path` (ruta absoluta o relativa) y `option`, retornando un array de objetos por cada link encontrado con sus propiedades (href, text y file).
+
+
+**Ejemplos de uso:**
+```js
+const mdLinks = require("md-links");
+
+mdLinks("./some/example.md")
+  .then(links => {
+    // => [{ href, text, file }]
+  })
+  .catch(console.error);
+
+mdLinks("./some/example.md", { validate: true })
+  .then(links => {
+    // => [{ href, text, file, status, ok }]
+  })
+  .catch(console.error);
+
+mdLinks("./some/dir")
+  .then(links => {
+    // => [{ href, text, file }]
+  })
+  .catch(console.error);
+``` 
+
+### CLI
 En la línea de interfaz de comando (CLI), se coloca lo siguiente:
 
 `md-links <path-to-file> [options]`
@@ -40,7 +72,7 @@ Y si se intenta con la opción `--help`, se mostrará para qué sirve cada una d
 
 
 ## DIAGRAMAS DE FLUJO
-Para poder realizar esta librería, se realizaron 2 diagramas de flujo para cada tipo: uno del API donde se pondrían las funciones principales, y uno para el CLI con los resultados que saldrían al colocar o no ciertas opciones.
+Para poder realizar esta librería, se realizaron 2 diagramas de flujo para cada tipo.
 
 ### 1) API
 
