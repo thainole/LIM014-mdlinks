@@ -7,7 +7,7 @@ La librería `md-links` -creada con [Node.js](https://nodejs.org/)- se encarga d
 
 Puede instalarse de la siguiente forma: 
 
-`$ npm i --global thainole/LIM014-mdlinks`
+`$ npm i lim014-mdlinks`
 
 ## GUÍA DE USO
 En la línea de interfaz de comando (CLI), se coloca lo siguiente:
