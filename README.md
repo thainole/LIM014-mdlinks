@@ -81,3 +81,4 @@ Para poder realizar esta librería, se realizaron 2 diagramas de flujo para cada
 ### 2) CLI (Command Line Interface - Interfaz de Línea de Comando)
 
 ![](./img/diagrama-cli.jpeg)
+
