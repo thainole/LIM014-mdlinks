@@ -14,6 +14,7 @@ describe('Resolve Path', () => {
     const result = `${__dirname}/__test__/files`;
     expect(absolutePath(`${__dirname}/__test__/files`)).toStrictEqual(result);
   });
+
   it('Resolves the path if it is relative', () => {
     const result = `${__dirname}\\files`;
     expect(absolutePath('./__test__/files')).toStrictEqual(result);

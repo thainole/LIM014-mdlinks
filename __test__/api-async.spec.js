@@ -21,7 +21,6 @@ describe('Validate link', () => {
       status: 200,
       statusText: 'OK',
     }));
-
     return validLink(arr).then((res) => {
       expect(res).toEqual(obj);
     });

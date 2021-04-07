@@ -5,6 +5,7 @@ describe('mdLinks', () => {
   it('is a function', () => {
     expect(typeof mdLinks).toBe('function');
   });
+
   test('returns an array of href, text and file', () => {
     const obj = [
       {
