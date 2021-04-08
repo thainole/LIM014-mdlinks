@@ -35,8 +35,8 @@ const getMdLinks = (paths) => {
     const links = fileRead.match(regx);
     if (links) {
       links.forEach((link) => {
-        const myhref = link.match(regxLink).join().slice(1, -1); // con join vuelvo string mi array
-        const mytext = link.match(regxText).join().slice(1, -1); // con el slice corto () []
+        const myhref = link.match(regxLink).join().slice(1, -1);
+        const mytext = link.match(regxText).join().slice(1, -1);
         const linksObj = {
           href: myhref,
           text: mytext,
