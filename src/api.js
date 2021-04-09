@@ -15,7 +15,7 @@ const getMdFiles = (paths) => {
     if (dirElem.length > 0) {
       return dirElem.reduce((acc, elem) => {
         const newAbsPath = path.join(paths, elem);
-        return acc.concat(getMdFiles(newAbsPath)); // del callback del reduce
+        return acc.concat(getMdFiles(newAbsPath));
       }, []);
     }
   } else if (path.extname(paths) === '.md') {
